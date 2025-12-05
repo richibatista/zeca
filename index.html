@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Feliz Natal, Zeca</title>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{ --bg: #4a90e2; --card: rgba(255,255,255,0.98); --accent:#0b5fd7; --muted:#375a7f; --text:#072033; --maxw:980px; }
+*{box-sizing:border-box}
+body{margin:0;font-family:Rubik,system-ui,-apple-system,'Segoe UI',Roboto,Arial;background:var(--bg);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;color:var(--text);}
+/* subtle falling snow */
+
+100%{transform:translateY(6px)}}
+
+.card{width:100%;max-width:var(--maxw);background:var(--card);border-radius:16px;box-shadow:0 14px 40px rgba(2,6,23,0.12);overflow:hidden;display:grid;grid-template-columns:420px 1fr;gap:0;}
+@media(max-width:900px){.card{grid-template-columns:1fr}}
+
+.left{padding:20px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));display:flex;flex-direction:column;align-items:center;gap:12px}
+.main-photo{width:360px;height:360px;border-radius:12px;overflow:hidden;border:8px solid #D4AF37;box-shadow:0 12px 30px rgba(212,175,55,0.12);background:#e6f2ff}
+.main-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.thumbs{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;justify-content:center}
+.thumb{width:100px;height:70px;border-radius:8px;overflow:hidden;cursor:pointer;border:3px solid transparent;box-shadow:0 6px 14px rgba(0,0,0,0.06);}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb.active{border-color:var(--accent)}
+
+.right{padding:28px 24px;display:flex;flex-direction:column;gap:12px;justify-content:center}
+.title{font-size:26px;margin:0;font-weight:700}
+.subtitle{margin:0;color:var(--muted)}
+.message{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 20px rgba(2,6,23,0.06);font-size:17px;line-height:1.7;color:var(--text);white-space:pre-wrap}
+
+.controls{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;font-weight:700;color:white;text-decoration:none;border:0;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,0.08)}
+.btn.music{background:linear-gradient(90deg,#0b5fd7,#4aa3ff)}
+.btn.copy{background:linear-gradient(90deg,#00b09b,#96c93d)}
+.btn.share{background:linear-gradient(90deg,#1976d2,#64b5f6)}
+
+@media(max-width:520px){.main-photo{width:100%;height:280px;border-radius:10px;border-width:6px}.thumb{width:86px;height:60px}.card{padding:12px}.right{padding:18px}.title{font-size:20px}.message{font-size:15px}}
+
+a:focus,button:focus{outline:3px solid rgba(0,0,0,0.08);outline-offset:3px;border-radius:10px}
+
+/* small festive top garland */
+.garland{position:fixed;top:6px;left:0;right:0;height:60px;pointer-events:none;z-index:2;display:flex;align-items:center;justify-content:center}
+.garland svg{width:100%;height:60px;filter:drop-shadow(0 4px 6px rgba(0,0,0,0.08))}
+
+/* decorative inner frame for gold */
+.main-photo{position:relative;}
+.main-photo::after{content:'';position:absolute;inset:6px;border-radius:8px;pointer-events:none;box-shadow:inset 0 0 0 3px rgba(255,255,255,0.06);}
+</style>
+</head>
+<body>
+<div class="garland" aria-hidden="true">
+  <svg viewBox="0 0 1200 60" preserveAspectRatio="xMidYMid slice">
+    <defs><linearGradient id="g2" x1="0" x2="1"><stop offset="0" stop-color="#0b6623"/><stop offset="1" stop-color="#2e8b57"/></linearGradient></defs>
+    <path d="M0,45 C150,5 350,5 500,45 C650,85 850,85 1000,45 C1150,5 1200,5 1200,5 L1200,60 L0,60 Z" fill="url(#g2)"/>
+    <circle cx="140" cy="36" r="5" fill="#ff3b6b"/><circle cx="260" cy="40" r="5" fill="#ffd600"/><circle cx="380" cy="32" r="5" fill="#1e90ff"/><circle cx="520" cy="38" r="5" fill="#ff3b6b"/><circle cx="700" cy="36" r="5" fill="#ffd600"/><circle cx="860" cy="34" r="5" fill="#1e90ff"/>
+  </svg>
+</div>
+
+<div class="card" role="main" aria-labelledby="zecaTitle">
+  <div class="left">
+    <div class="main-photo" id="mainPhoto">
+      <img src="Zeca1.jpg" alt="Foto principal de Zeca">
+    </div>
+    <div class="thumbs" role="list" aria-label="Galeria de fotos">
+      <div class="thumb active" role="listitem" tabindex="0" data-src="Zeca1.jpg"><img src="Zeca1.jpg" alt="Foto 1 de Zeca"></div>
+      <div class="thumb" role="listitem" tabindex="0" data-src="Zeca2.jpg"><img src="Zeca2.jpg" alt="Foto 2 de Zeca"></div>
+      <div class="thumb" role="listitem" tabindex="0" data-src="Zeca3.jpg"><img src="Zeca3.jpg" alt="Foto 3 de Zeca"></div>
+    </div>
+    <div style="font-weight:700;margin-top:6px">Zeca</div>
+    <div style="color:var(--muted)">Cunhado querido • Pai protetor • Apaixonado por motos</div>
+  </div>
+
+  <div class="right">
+    <h1 id="zecaTitle" class="title">🎄 Feliz Natal, Zeca</h1>
+    <p class="subtitle">Para o cunhado de grande coração.</p>
+
+    <div class="message" id="msg">Querido Zeca,<br><br>És um cunhado fantástico, com um grande coração. Trabalhador, sempre disponível para ajudar e um pai exemplar — não largas os teus filhos por nada e és muito protetor.<br><br>Adoras motos, motorizadas e quadriciclos; sempre com as mãos ocupadas em trabalhos manuais e projetos — isso mostra a tua paixão e dedicação.<br><br>Tal como a Raquel, tens um pequeno problema com os domingos: alguns nem deviam existir! 😄<br><br>Que esta Natal te traga descanso, alegria e muitos passeios com a família. Obrigado por seres quem és.<br><br>Um abraço,<br>Tua família<br></div>
+
+    <div class="controls" role="toolbar" aria-label="Ações">
+      <a class="btn music" href="https://www.youtube.com/watch?v=hrAeuPqYnRQ" target="_blank" rel="noopener noreferrer">🎧 Música favorita</a>
+      <button class="btn copy" id="copyBtn">📋 Copiar mensagem</button>
+      <button class="btn share" id="shareBtn">🔗 Partilhar página</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Thumbnail click to update main photo
+const thumbs = document.querySelectorAll('.thumb');
+const mainImg = document.querySelector('#mainPhoto img');
+thumbs.forEach(t => {
+  t.addEventListener('click', () => {
+    const src = t.getAttribute('data-src');
+    mainImg.src = src;
+    thumbs.forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+  });
+  t.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      t.click();
+    }
+  });
+});
+
+// Copy message
+document.getElementById('copyBtn').addEventListener('click', async () => {
+  const text = document.getElementById('msg').innerText.trim();
+  try {
+    await navigator.clipboard.writeText(text);
+    const b = document.getElementById('copyBtn');
+    const prev = b.innerText;
+    b.innerText = '✅ Copiado';
+    setTimeout(()=> b.innerText = prev, 1400);
+  } catch (e) {
+    alert('Não foi possível copiar automaticamente. Seleciona e copia manualmente.');
+  }
+});
+
+// Share
+document.getElementById('shareBtn').addEventListener('click', (e) => {
+  if (navigator.share) {
+    navigator.share({ title: document.title, text: 'Mensagem para Zeca', url: location.href }).catch(()=>{});
+  } else {
+    navigator.clipboard.writeText(location.href).then(()=> alert('Link copiado para a área de transferência. Cola para partilhar.'));
+  }
+});
+</script>
+</body>
+</html>
